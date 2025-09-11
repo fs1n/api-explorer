@@ -257,45 +257,45 @@ paths:
                   <?xml version="1.0" encoding="UTF-8"?>
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                   	<OJPRequest>
-                  		<ServiceRequest>
-                  			<RequestTimestamp>2025-09-11T14:20:50+02:00</RequestTimestamp>
-                  			<RequestorRef>API-Explorer</RequestorRef>
-                  			<ojp:OJPTripRequest>
-                  				<RequestTimestamp>2025-09-11T14:20:50+02:00</RequestTimestamp>
-                  				<MessageIdentifier>TR-1e2</MessageIdentifier>
-                  				<ojp:Origin>
-                  					<ojp:PlaceRef>
-                  						<StopPointRef>8503000</StopPointRef>
-                  						<ojp:LocationName>
-                  							<ojp:Text>Zürich HB</ojp:Text>
-                  						</ojp:LocationName>
-                  					</ojp:PlaceRef>
-                  					<ojp:DepArrTime>2025-12-12T11:00:00Z</ojp:DepArrTime>
-                  					<!-- <ojp:DepArrTime>2025-12-12T11:00:00Z</ojp:DepArrTime> set the time to request timetable at a certain time  -->
-                  				</ojp:Origin>
-                  				<ojp:Destination>
-                  					<ojp:PlaceRef>
-                  						<StopPointRef>8503424</StopPointRef>
-                  						<ojp:LocationName>
-                  							<ojp:Text>Schaffhausen</ojp:Text>
-                  						</ojp:LocationName>
-                  					</ojp:PlaceRef>
-                  				</ojp:Destination>
-                  				<ojp:Via>
-                  					<ojp:ViaPoint>
-                  						<StopPointRef>8506000</StopPointRef>
-                  						<ojp:LocationName>
-                  							<ojp:Text>Winterthur</ojp:Text>
-                  						</ojp:LocationName>
-                  					</ojp:ViaPoint>
-                  					<ojp:DwellTime>PT2H</ojp:DwellTime>
-                  				</ojp:Via>
-                  				<ojp:Params>
-                  					<ojp:NumberOfResults>1</ojp:NumberOfResults>
-                  					<ojp:IncludeIntermediateStops>true</ojp:IncludeIntermediateStops>
-                  				</ojp:Params>
-                  			</ojp:OJPTripRequest>
-                  		</ServiceRequest>
+                  		<siri:ServiceRequest>
+                  			<siri:RequestTimestamp>2025-09-11T14:20:50+02:00</siri:RequestTimestamp>
+                  			<siri:RequestorRef>API-Explorer</siri:RequestorRef>
+                  			<OJPTripRequest>
+                  				<siri:RequestTimestamp>2025-09-11T14:20:50+02:00</siri:RequestTimestamp>
+                  				<siri:MessageIdentifier>TR-1e2</siri:MessageIdentifier>
+                  				<Origin>
+                  					<PlaceRef>
+                  						<siri:StopPointRef>8503000</siri:StopPointRef>
+                  						<LocationName>
+                  							<Text>Zürich HB</Text>
+                  						</LocationName>
+                  					</PlaceRef>
+                  					<DepArrTime>2025-12-12T11:00:00Z</DepArrTime>
+                  					<!-- <DepArrTime>2025-12-12T11:00:00Z</DepArrTime> set the time to request timetable at a certain time  -->
+                  				</Origin>
+                  				<Destination>
+                  					<PlaceRef>
+                  						<siri:StopPointRef>8503424</siri:StopPointRef>
+                  						<LocationName>
+                  							<Text>Schaffhausen</Text>
+                  						</LocationName>
+                  					</PlaceRef>
+                  				</Destination>
+                  				<Via>
+                  					<ViaPoint>
+                  						<siri:StopPointRef>8506000</siri:StopPointRef>
+                  						<LocationName>
+                  							<Text>Winterthur</Text>
+                  						</LocationName>
+                  					</ViaPoint>
+                  					<DwellTime>PT2H</DwellTime>
+                  				</Via>
+                  				<Params>
+                  					<NumberOfResults>1</NumberOfResults>
+                  					<IncludeIntermediateStops>true</IncludeIntermediateStops>
+                  				</Params>
+                  			</OJPTripRequest>
+                  		</siri:ServiceRequest>
                   	</OJPRequest>
                   </OJP>
               exampleTR3:
