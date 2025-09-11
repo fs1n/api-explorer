@@ -350,15 +350,15 @@ paths:
                   		<siri:ServiceRequest>
                   			<siri:RequestTimestamp>2025-09-11T14:20:50+02:00</siri:RequestTimestamp>
                   			<siri:RequestorRef>API-Explorer</siri:RequestorRef>
-                  			<ojp:OJPTripInfoRequest>
-                  			    <RequestTimestamp>2025-09-11T14:20:50+02:00</RequestTimestamp>
-                  			    <MessageIdentifier>TIR-1a</MessageIdentifier>
-                  			    <ojp:JourneyRef>ch:1:sjyid:100001:18355-001</ojp:JourneyRef>
-                  			    <ojp:OperatingDayRef>2025-09-11</ojp:OperatingDayRef>
-                  			</ojp:OJPTripInfoRequest>
+                  			<OJPTripInfoRequest>
+                  			    <siri:RequestTimestamp>2025-09-11T14:20:50+02:00</siri:RequestTimestamp>
+                  			    <siri:MessageIdentifier>TIR-1a</siri:MessageIdentifier>
+                  			    <JourneyRef>ch:1:sjyid:100001:18355-001</JourneyRef>
+                  			    <OperatingDayRef>2025-09-11</OperatingDayRef>
+                  			</OJPTripInfoRequest>
                   		</siri:ServiceRequest>
                   	</OJPRequest>
-                  </OJP>                                           
+                  </OJP>
       responses:
         '400':
           description: "Bad Request"
