@@ -49,10 +49,10 @@ paths:
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                     <OJPRequest>
                   		<siri:ServiceRequest>
-                  			<siri:RequestTimestamp>2025-09-10T09:52:45+02:00</siri:RequestTimestamp>
+                  			<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   			<siri:RequestorRef>API-Explorer</siri:RequestorRef>
                   			<OJPLocationInformationRequest>
-                  				<siri:RequestTimestamp>2025-09-10T09:52:45+02:00</siri:RequestTimestamp>
+                  				<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   				<siri:MessageIdentifier>LIR-1i</siri:MessageIdentifier>
                   				<InitialInput>
                   					<Name>bern s</Name>
@@ -72,10 +72,10 @@ paths:
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                   	<OJPRequest>
                   		<siri:ServiceRequest>
-                  			<siri:RequestTimestamp>2025-09-10T09:19:19+02:00</siri:RequestTimestamp>
+                  			<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   			<siri:RequestorRef>API-Explorer</siri:RequestorRef>
                   			<OJPLocationInformationRequest>
-                  				<siri:RequestTimestamp>2025-09-10T09:19:19+02:00</siri:RequestTimestamp>
+                  				<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   				<siri:MessageIdentifier>LIR-1i</siri:MessageIdentifier>
                   				<InitialInput>
                   					<Name>Hof bei Uznach</Name>
@@ -96,10 +96,10 @@ paths:
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                   	<OJPRequest>
                   		<siri:ServiceRequest>
-                  			<siri:RequestTimestamp>2025-09-10T08:54:45+02:00</siri:RequestTimestamp>
+                  			<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   			<siri:RequestorRef>API-Explorer</siri:RequestorRef>
                   			<OJPLocationInformationRequest>
-                  				<siri:RequestTimestamp>2025-09-10T08:54:45+02:00</siri:RequestTimestamp>
+                  				<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   				<siri:MessageIdentifier>LIR-1a2</siri:MessageIdentifier>
                   				<InitialInput>
                   					<GeoRestriction>
@@ -128,10 +128,10 @@ paths:
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                   	<OJPRequest>
                   		<siri:ServiceRequest>
-                  			<siri:RequestTimestamp>2025-09-10T09:47:17+02:00</siri:RequestTimestamp>
+                  			<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   			<siri:RequestorRef>API-Explorer</siri:RequestorRef>
                   			<OJPLocationInformationRequest>
-                  				<siri:RequestTimestamp>2025-09-10T09:47:17+02:00</siri:RequestTimestamp>
+                  				<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   				<siri:MessageIdentifier>LIR-3a</siri:MessageIdentifier>
                   				<InitialInput>
                   					<Name>hai</Name>
@@ -152,10 +152,10 @@ paths:
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                   	<OJPRequest>
                   		<siri:ServiceRequest>
-                  			<siri:RequestTimestamp>2025-09-10T10:38:45+02:00</siri:RequestTimestamp>
+                  			<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   			<siri:RequestorRef>API-Explorer</siri:RequestorRef>
                   			<OJPStopEventRequest>
-                  				<siri:RequestTimestamp>2025-09-10T10:38:45+02:00</siri:RequestTimestamp>
+                  				<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   				<siri:MessageIdentifier>SER-1a2</siri:MessageIdentifier>
                   				<Location>
                   					<PlaceRef>
@@ -181,10 +181,10 @@ paths:
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                   	<OJPRequest>
                   		<siri:ServiceRequest>
-                  			<siri:RequestTimestamp>2025-09-10T11:11:08+02:00</siri:RequestTimestamp>
+                  			<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   			<siri:RequestorRef>API-Explorer</siri:RequestorRef>
                   			<OJPStopEventRequest>
-                  				<siri:RequestTimestamp>2025-09-10T11:11:08+02:00</siri:RequestTimestamp>
+                  				<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   				<siri:MessageIdentifier>SER-1d4</siri:MessageIdentifier>
                   				<Location>
                   					<PlaceRef>
@@ -193,8 +193,7 @@ paths:
                   							<Text>Schaffhausen, Quellenstrasse</Text>
                   						</Name>
                   					</PlaceRef>
-                  					<DepArrTime>2025-12-12T11:00:00Z</DepArrTime>
-                  					<!-- <ojp:DepArrTime>2025-12-12T11:00:00Z</ojp:DepArrTime> "set the time to request timetable at a certain time"  -->
+                  					<DepArrTime>{{isoTimestamp}}</DepArrTime>
                   				</Location>
                   				<Params>
                   					<LineFilter>
@@ -220,10 +219,10 @@ paths:
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                   	<OJPRequest>
                   		<siri:ServiceRequest>
-                  			<siri:RequestTimestamp>2025-09-11T14:20:50+02:00</siri:RequestTimestamp>
+                  			<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   			<siri:RequestorRef>API-Explorer</siri:RequestorRef>
                   			<OJPTripRequest>
-                  				<siri:RequestTimestamp>2025-09-11T14:20:50+02:00</siri:RequestTimestamp>
+                  				<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   				<siri:MessageIdentifier>TR-1a1NOW</siri:MessageIdentifier>
                   				<Origin>
                   					<PlaceRef>
@@ -258,10 +257,10 @@ paths:
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                   	<OJPRequest>
                   		<siri:ServiceRequest>
-                  			<siri:RequestTimestamp>2025-09-11T14:20:50+02:00</siri:RequestTimestamp>
+                  			<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   			<siri:RequestorRef>API-Explorer</siri:RequestorRef>
                   			<OJPTripRequest>
-                  				<siri:RequestTimestamp>2025-09-11T14:20:50+02:00</siri:RequestTimestamp>
+                  				<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   				<siri:MessageIdentifier>TR-1e2</siri:MessageIdentifier>
                   				<Origin>
                   					<PlaceRef>
@@ -270,8 +269,7 @@ paths:
                   							<Text>Zürich HB</Text>
                   						</LocationName>
                   					</PlaceRef>
-                  					<DepArrTime>2025-12-12T11:00:00Z</DepArrTime>
-                  					<!-- <DepArrTime>2025-12-12T11:00:00Z</DepArrTime> set the time to request timetable at a certain time  -->
+                  					<DepArrTime>{{isoTimestamp}}</DepArrTime>
                   				</Origin>
                   				<Destination>
                   					<PlaceRef>
@@ -306,10 +304,10 @@ paths:
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                   	<OJPRequest>
                   		<siri:ServiceRequest>
-                  			<siri:RequestTimestamp>2025-09-11T14:11:50+02:00</siri:RequestTimestamp>
+                  			<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   			<siri:RequestorRef>API-Explorer</siri:RequestorRef>
                   			<OJPTripRequest>
-                  				<siri:RequestTimestamp>2025-09-11T14:11:50+02:00</siri:RequestTimestamp>
+                  				<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   				<siri:MessageIdentifier>TR-1r1</siri:MessageIdentifier>
                   				<Origin>
                   					<PlaceRef>
@@ -326,8 +324,7 @@ paths:
                   							<Text>Murten/Morat</Text>
                   						</Name>
                   					</PlaceRef>
-                  					<DepArrTime>2025-12-12T11:00:00Z</DepArrTime>
-                                    <!-- <ojp:DepArrTime>2025-12-12T11:00:00Z</ojp:DepArrTime> set the time to request timetable at a certain time  -->
+                  					<DepArrTime>{{isoTimestamp}}</DepArrTime>
                   				</Destination>
                   				<Params>
                   					<NumberOfResults>3</NumberOfResults>
@@ -348,13 +345,13 @@ paths:
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                   	<OJPRequest>
                   		<siri:ServiceRequest>
-                  			<siri:RequestTimestamp>2025-09-11T14:20:50+02:00</siri:RequestTimestamp>
+                  			<siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   			<siri:RequestorRef>API-Explorer</siri:RequestorRef>
                   			<OJPTripInfoRequest>
-                  			    <siri:RequestTimestamp>2025-09-11T14:20:50+02:00</siri:RequestTimestamp>
+                  			    <siri:RequestTimestamp>{{isoTimestamp}}</siri:RequestTimestamp>
                   			    <siri:MessageIdentifier>TIR-1a</siri:MessageIdentifier>
                   			    <JourneyRef>ch:1:sjyid:100001:18355-001</JourneyRef>
-                  			    <OperatingDayRef>2025-09-11</OperatingDayRef>
+                  			    <OperatingDayRef>{{today}}</OperatingDayRef>
                   			</OJPTripInfoRequest>
                   		</siri:ServiceRequest>
                   	</OJPRequest>
