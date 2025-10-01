@@ -85,7 +85,7 @@ paths:
                                               <ojp:Text>Bern</ojp:Text>
                                           </ojp:LocationName>
                                       </ojp:PlaceRef>
-                                      <!-- <ojp:DepArrTime>2024-06-01T12:43:50</ojp:DepArrTime> "set the time to request timetable at a certain time"  -->
+                                      <ojp:DepArrTime>{{isoTimestamp}}</ojp:DepArrTime>
                                   </ojp:Location>
                                   <ojp:Params>
                                       <ojp:OperatorFilter>
@@ -110,10 +110,10 @@ paths:
                   <OJP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.siri.org.uk/siri" version="1.0" xmlns:ojp="http://www.vdv.de/ojp" xsi:schemaLocation="http://www.siri.org.uk/siri ../ojp-xsd-v1.0/OJP.xsd">
                       <OJPRequest>
                           <ServiceRequest>
-                              <RequestTimestamp>2025-09-09T14:45:04.318Z</RequestTimestamp>
+                              <RequestTimestamp>{{isoTimestamp}}</RequestTimestamp>
                               <RequestorRef>API-Explorer</RequestorRef>
                               <ojp:OJPTripRequest>
-                                  <RequestTimestamp>2025-09-09T14:45:04.318Z</RequestTimestamp>
+                                  <RequestTimestamp>{{isoTimestamp}}</RequestTimestamp>
                                   <MessageIdentifier>TR-1a1</MessageIdentifier>
                                   <ojp:Origin>
                                       <ojp:PlaceRef>
@@ -122,7 +122,7 @@ paths:
                                               <ojp:Text>Kloten</ojp:Text>
                                           </ojp:LocationName>
                                       </ojp:PlaceRef>
-                                      <ojp:DepArrTime>2025-12-12T11:00:00Z</ojp:DepArrTime>
+                                      <ojp:DepArrTime>{{isoTimestamp}}</ojp:DepArrTime>
                                   </ojp:Origin>
                                   <ojp:Destination>
                                       <ojp:PlaceRef>
@@ -147,14 +147,13 @@ paths:
                   <OJP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.siri.org.uk/siri" version="1.0" xmlns:ojp="http://www.vdv.de/ojp" xsi:schemaLocation="http://www.siri.org.uk/siri ../ojp-xsd-v1.0/OJP.xsd">
                       <OJPRequest>
                           <ServiceRequest>
-                              <RequestTimestamp>2025-09-09T14:13:22.070Z</RequestTimestamp>
+                              <RequestTimestamp>{{isoTimestamp}}</RequestTimestamp>
                               <RequestorRef>API-Explorer</RequestorRef>
                               <ojp:OJPTripInfoRequest>
-                                  <RequestTimestamp>2025-09-09T14:13:22.070Z</RequestTimestamp>
+                                  <RequestTimestamp>{{isoTimestamp}}</RequestTimestamp>
                                   <MessageIdentifier>TIR-1a</MessageIdentifier>
                                   <ojp:JourneyRef>ch:1:sjyid:100001:18362-001</ojp:JourneyRef>
-                                  <ojp:OperatingDayRef>2025-09-09</ojp:OperatingDayRef>
-                                  <!-- <ojp:OperatingDayRef>{{today}}</ojp:OperatingDayRef> "Adapt the time"  -->
+                                  <ojp:OperatingDayRef>{{today}}</ojp:OperatingDayRef>
                               </ojp:OJPTripInfoRequest>
                           </ServiceRequest>
                       </OJPRequest>
