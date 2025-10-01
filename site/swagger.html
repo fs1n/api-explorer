@@ -39,6 +39,14 @@
     (async () => {
       let yamlText = await (await fetch('./openapi.yaml')).text();
 
+      yamlText = yamlText
+        .replaceAll('{{today}}', todayYMD())     // e.g. 2025-10-01
+        .replaceAll('{{isoTimestamp}}', nowZulu());  // e.g. 2025-09-09T14:13:22.070Z
+
+      if (yamlText.includes('{{') || yamlText.includes('}}')) {
+        throw new Error('Placeholders "{{" or "}}" found in OpenAPI YAML.');
+      }
+
       const spec = jsyaml.load(yamlText);
 
       const ui = SwaggerUIBundle({
