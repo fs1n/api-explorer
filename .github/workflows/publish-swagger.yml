@@ -32,6 +32,7 @@ jobs:
           API_KEY_OJP1: ${{ secrets.API_KEY_OJP1 }}
           API_KEY_OJP2: ${{ secrets.API_KEY_OJP2 }}
           API_KEY_OJPFARE: ${{ secrets.API_KEY_OJPFARE }}
+          API_KEY_TRAFFIC_LIGHTS: ${{ secrets.API_KEY_TRAFFIC_LIGHTS }}
         run: |
           node scripts/render-openapi.mjs
 
