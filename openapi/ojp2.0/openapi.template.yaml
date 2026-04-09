@@ -176,7 +176,7 @@ paths:
               exampleSER2:
                 summary: "6. Stop Event Service - complex"
                 description: "Complex OJPStopEventRequest"
-                value:  |
+                value: |
                   <?xml version="1.0" encoding="UTF-8"?>
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                   	<OJPRequest>
@@ -214,7 +214,7 @@ paths:
               exampleTR1:
                 summary: "7. Trip Service - Simple"
                 description: "Simple OJPTripRequest Kloten - Schaffhausen"
-                value:  |
+                value: |
                   <?xml version="1.0" encoding="UTF-8"?>
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                   	<OJPRequest>
@@ -252,7 +252,7 @@ paths:
               exampleTR2:
                 summary: "8. Trip Service - with via and dwell time"
                 description: "Define a stop over time on the via point of the trip"
-                value:   |
+                value: |
                   <?xml version="1.0" encoding="UTF-8"?>
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                   	<OJPRequest>
@@ -299,7 +299,7 @@ paths:
               exampleTR3:
                 summary: "9. Trip Service - with a train with multiple destinations"
                 description: "Uses the RemainInVehicule transfer, and lots of parameters for further information"
-                value:   |
+                value: |
                   <?xml version="1.0" encoding="UTF-8"?>
                   <OJP xmlns="http://www.vdv.de/ojp" xmlns:siri="http://www.siri.org.uk/siri" version="2.0">
                   	<OJPRequest>
@@ -357,7 +357,7 @@ paths:
                   	</OJPRequest>
                   </OJP>
       responses:
-        '400':
+        "400":
           description: "Bad Request"
           content:
             application/xml:
@@ -379,8 +379,8 @@ paths:
                       <MVC-Errors>
                         <MVC-Empty>An error occurred while deserializing input data.</MVC-Empty>
                       </MVC-Errors>
-                    </problem> 
-        '401':
+                    </problem>
+        "401":
           description: "Unauthorized"
           content:
             application/json:
@@ -397,7 +397,7 @@ paths:
                   description: "Get a correct key and apply it correctly."
                   value:
                     error: Authorization field missing
-        '403':
+        "403":
           description: "Forbidden"
           content:
             application/json:
@@ -414,7 +414,7 @@ paths:
                   description: "Get a correct key and apply it correctly."
                   value:
                     error: Access to this API has been disallowed
-        '500':
+        "500":
           description: "Internal server error"
           content:
             application/json:
