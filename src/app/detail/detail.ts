@@ -78,7 +78,7 @@ export class Detail implements OnInit, AfterViewInit {
 
     try {
       const rawYaml = await this.loadYamlText(apiConfig.yamlPath);
-      const spec = this.parseYaml(rawYaml);
+      const spec = await this.parseYaml(apiConfig, rawYaml);
 
       const ui = SwaggerUI({
         spec,
@@ -101,12 +101,66 @@ export class Detail implements OnInit, AfterViewInit {
     }
   }
 
-  private parseYaml(yamlText: string): object {
-    yamlText = yamlText.replaceAll('{{today}}', AppHelpers.todayYMD());
-    yamlText = yamlText.replaceAll('{{isoTimestamp}}', AppHelpers.nowZulu());
-    
-    const parsed = YAML.load(yamlText);
+  private async parseYaml(appConfig: API_Config, yamlText: string): Promise<object> {
+    const parsedStep1 = YAML.load(yamlText);
 
+    const mapPlaceholderValues: Record<string, (string | string[])> = {};
+
+    const specTextLines = yamlText.split('\n');
+    const newSpecTextLines: string[] = [];
+
+    for (const apiSpecTextLine of specTextLines) {
+      const placeholderMatches: string[] = apiSpecTextLine.match(/{{([^}]+?)}}/g) ?? [];
+      if (placeholderMatches.length === 0) {
+        newSpecTextLines.push(apiSpecTextLine);
+        continue;
+      }
+
+      for (const placeholderMatch of placeholderMatches) {
+        const placeholderKey = placeholderMatch.replaceAll('{', '').replaceAll('}', '');
+
+        const value: string | string[] = await (async () => {
+          if (placeholderKey in mapPlaceholderValues) {
+            return mapPlaceholderValues[placeholderKey];
+          }
+
+          const placeholderContext: PlaceholderContext = {
+            apiConfig: appConfig,
+            apiSpec: parsedStep1,
+          };
+
+          if (!(placeholderKey in handlerLoaders)) {
+            return placeholderMatch;
+          }
+          
+          const placeholderLoader = handlerLoaders[placeholderKey as PlaceHolderKey];
+          const placeholderModule = await placeholderLoader();
+          const placeholderHandler = new placeholderModule.default();
+          const placeholderValue = await placeholderHandler.resolve(placeholderContext);
+
+          mapPlaceholderValues[placeholderKey] = placeholderValue;
+
+          return placeholderValue;
+        })();
+
+        if (Array.isArray(value)) {
+        } else {
+          const newSpecTextLine = apiSpecTextLine.replace(placeholderMatch, value);
+          newSpecTextLines.push(newSpecTextLine);
+        }
+      }
+    }
+
+    const newSpecText = newSpecTextLines.join('\n');
+    
+    const placeholderMatchesStep2 = newSpecText.match(/{{([^}]+?)}}/g) ?? [];
+    if (placeholderMatchesStep2.length > 0) {
+      console.error('YAML placeholders not replaced');
+      console.log(placeholderMatchesStep2);
+    }
+
+    const parsed = YAML.load(newSpecText);
+    
     if (!parsed || typeof parsed !== 'object') {
       throw new Error('Parsed YAML is empty or invalid.');
     }
