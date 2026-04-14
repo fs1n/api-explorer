@@ -24,11 +24,15 @@ type PlaceholderModule = {
 
 export type PlaceHolderKey =
   | 'today'
-  | 'isoTimestamp';
+  | 'isoTimestamp'
+  | 'RESPONSE_XML_LIR1'
+  | 'RESPONSE_XML_TR1';
 
 const handlerLoaders: Record<PlaceHolderKey, () => Promise<PlaceholderModule>> = {
   today: () => import('./placeholders/today'),
   isoTimestamp: () => import('./placeholders/iso-timestamp'),
+  RESPONSE_XML_LIR1: () => import('./placeholders/ojp-lir1'),
+  RESPONSE_XML_TR1: () => import('./placeholders/ojp-tr1'),
 };
 
 @Component({
