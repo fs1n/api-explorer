@@ -376,7 +376,6 @@ paths:
                   summary: TR Bern Zürich
                   value: |
                     {{RESPONSE_XML_TR1}}
-
         "400":
           description: "Bad Request"
           content:
