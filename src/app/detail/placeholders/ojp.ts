@@ -8,6 +8,12 @@ type OJP_AnyRequest = OJP.LocationInformationRequest | OJP.OJPv1_LocationInforma
       | OJP.TripRequest | OJP.OJPv1_TripRequest;
 
 export abstract class OJP_PlaceholderHandler {
+  protected requestorRef: string;
+
+  constructor() {
+    this.requestorRef = 'odmch-api-explorer';
+  }
+
   protected buildSDK(context: PlaceholderContext): OJP.AnySDK {
     let apiURL: string | null = null;
     let ojpVersion: OJP.OJP_VERSION = '2.0';
@@ -36,11 +42,11 @@ export abstract class OJP_PlaceholderHandler {
     };
     const sdk: OJP.AnySDK = (() => {
       if (ojpVersion === '1.0') {
-        const legacySDK = OJP.SDK.v1('odmch-api-explorer', stageConfig, 'de');
+        const legacySDK = OJP.SDK.v1(this.requestorRef, stageConfig, 'de');
         return legacySDK;
       }
 
-      const defaultSDK = OJP.SDK.create('odmch-api-explorer', stageConfig, 'de');
+      const defaultSDK = OJP.SDK.create(this.requestorRef, stageConfig, 'de');
       return defaultSDK;
     })();
 
