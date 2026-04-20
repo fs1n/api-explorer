@@ -1,5 +1,3 @@
-import * as OJP from 'ojp-sdk';
-
 import { PlaceholderContext, PlaceholderHandler } from './placeholder';
 import { OJP_PlaceholderHandler } from './ojp';
 
