@@ -359,7 +359,7 @@ paths:
                   </OJP>
               exampleTRR1:
                 summary: "11. Trip Refine Request"
-                description: "Simple TRR request for a TR Bern - Zurich occuring after 10AM next day. The TR response XML is pre-fetched using ojp-sdk"
+                description: "TRR request for the first trip of Bern - Zurich TR request occuring next day after 10AM. The TR response XML is pre-fetched using ojp-sdk"
                 value: | 
                   {{REQUEST_XML_TRR1}}
       responses:
