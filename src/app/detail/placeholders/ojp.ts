@@ -1,6 +1,6 @@
 import * as OJP from 'ojp-sdk';
 
-import { PlaceholderContext, PlaceholderHandler } from './placeholder';
+import { PlaceholderContext } from './placeholder';
 import { API_Tokens } from '../../config/api-tokens';
 import { AppHelpers } from '../../helpers/app.helpers';
 
@@ -8,7 +8,13 @@ type OJP_AnyRequest = OJP.LocationInformationRequest | OJP.OJPv1_LocationInforma
       | OJP.TripRequest | OJP.OJPv1_TripRequest;
 
 export abstract class OJP_PlaceholderHandler {
-  protected buildSDK(context: PlaceholderContext): OJP.AnySDK {
+  protected requestorRef: string;
+
+  constructor() {
+    this.requestorRef = 'odmch-api-explorer';
+  }
+
+  protected buildSDK(context: PlaceholderContext, useOJPv1: boolean = false): OJP.AnySDK {
     let apiURL: string | null = null;
     let ojpVersion: OJP.OJP_VERSION = '2.0';
     try {
@@ -21,6 +27,10 @@ export abstract class OJP_PlaceholderHandler {
       const operationId: string = context.apiSpec.paths[requestPathKeys[0]].post.operationId;
 
       if (operationId.toLowerCase().startsWith('ojp1.0')) {
+        ojpVersion = '1.0';
+      }
+
+      if (useOJPv1) {
         ojpVersion = '1.0';
       }
     } catch {
@@ -36,11 +46,11 @@ export abstract class OJP_PlaceholderHandler {
     };
     const sdk: OJP.AnySDK = (() => {
       if (ojpVersion === '1.0') {
-        const legacySDK = OJP.SDK.v1('odmch-api-explorer', stageConfig, 'de');
+        const legacySDK = OJP.SDK.v1(this.requestorRef, stageConfig, 'de');
         return legacySDK;
       }
 
-      const defaultSDK = OJP.SDK.create('odmch-api-explorer', stageConfig, 'de');
+      const defaultSDK = OJP.SDK.create(this.requestorRef, stageConfig, 'de');
       return defaultSDK;
     })();
 
@@ -48,7 +58,7 @@ export abstract class OJP_PlaceholderHandler {
   }
 
   protected async fetchResponse(sdk: OJP.AnySDK, request: OJP_AnyRequest) {
-   try {
+    try {
       await request.fetchResponse(sdk);
     } catch (e) {
       return '<Error>Invalid XML response</Error>';

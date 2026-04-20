@@ -357,6 +357,11 @@ paths:
                       </siri:ServiceRequest>
                     </OJPRequest>
                   </OJP>
+              exampleTRR1:
+                summary: "11. Trip Refine Request"
+                description: "TRR request for the first trip of Bern - Zurich TR request occuring next day after 10AM. The TR response XML is pre-fetched using ojp-sdk"
+                value: | 
+                  {{REQUEST_XML_TRR1}}
       responses:
         "200":
           description: "Successful response"
